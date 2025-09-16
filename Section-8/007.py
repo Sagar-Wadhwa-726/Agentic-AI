@@ -6,6 +6,8 @@ def require_admin(func):
     def wrapper(user_role):
         if user_role!="admin":
             print(f"Access denied, only admin function !")
+            # there can be error here, we have to return something explicitly
+            return None
         else:
             return func(user_role)
     return wrapper
