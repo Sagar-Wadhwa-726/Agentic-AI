@@ -2,7 +2,7 @@ from multiprocessing import Process, Value
 
 def increment(counter):
     for i in range(100000):
-        # with counter.get_lock():
+        with counter.get_lock():
             counter.value+=1
 
 if __name__ == "__main__":
